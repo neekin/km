@@ -1,0 +1,8 @@
+asgiref==3.8.1
+Django==5.2
+django-crontab==0.7.1
+django-simpleui==2025.1.13
+djangorestframework==3.16.0
+setuptools==75.8.0
+sqlparse==0.5.3
+wheel==0.45.1
