@@ -3,6 +3,12 @@ Django==5.2
 django-crontab==0.7.1
 django-simpleui==2025.1.13
 djangorestframework==3.16.0
+gevent==24.11.1
+greenlet==3.1.1
+gunicorn==23.0.0
+packaging==24.2
 setuptools==75.8.0
 sqlparse==0.5.3
 wheel==0.45.1
+zope.event==5.0
+zope.interface==7.2
