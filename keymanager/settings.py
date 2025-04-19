@@ -24,11 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-esdgaipwj4pzb4(f12-u)2mj88vl76c7l*&3u(x@0a@0(@sv*l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #ALLOWED_HOSTS = ['http://armbian.lan','127.0.0.1']
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
+    # 'http://127.0.0.1:8000'
     "http://armbian.lan",
     "https://armbian.chaofan.live",
     # 其他可信域名（如HTTPS需完整协议）
@@ -40,6 +41,7 @@ CSRF_TRUSTED_ORIGINS = [
 INSTALLED_APPS = [
     'simpleui',
     'licence',
+    'orders',
     'rest_framework',
     'django_crontab',
     'django.contrib.admin',
@@ -89,7 +91,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+APPEND_SLASH = True
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -126,10 +128,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "staticfiles",
-]
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATICFILES_DIRS = [
+#     BASE_DIR / "staticfiles",
+# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = BASE_DIR / "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

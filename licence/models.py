@@ -19,3 +19,6 @@ class Licence(models.Model):
         ]
     def __str__(self):
         return self.machine_code
+    class Meta:
+        verbose_name = "打印机"
+        verbose_name_plural = "打印机"

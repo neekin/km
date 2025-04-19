@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class LicenceConfig(AppConfig):
+class OrdersConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'licence'
-    verbose_name = '授权管理'
+    name = 'orders'
+    verbose_name = '订单管理'
