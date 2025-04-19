@@ -1,0 +1,14 @@
+python manage.py collectstatic
+sudo chown -R www-data:www-data /home/deploy/keymanager/static
+
+#停止服务
+kill -TERM $(cat log/gunicorn.pid) 
+#启动服务
+gunicorn -c gunicorn.py keymanager.wsgi:application -D
+
+#查看服务
+ps -ef | grep gunicorn
+
+#定时任务
+python manage.py crontab add
+python manage.py crontab show

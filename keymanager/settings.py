@@ -24,9 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-esdgaipwj4pzb4(f12-u)2mj88vl76c7l*&3u(x@0a@0(@sv*l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['http://armbian.lan','127.0.0.1']
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    "http://armbian.lan",
+    "https://armbian.chaofan.live",
+    # 其他可信域名（如HTTPS需完整协议）
+]
 
 
 # Application definition
