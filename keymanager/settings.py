@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = [
     # 'http://127.0.0.1:8000'
     "http://armbian.lan",
-    "https://armbian.chaofan.live",
+    "https://printer.chaofan.live",
     # 其他可信域名（如HTTPS需完整协议）
 ]
 
@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'postgres',    # 数据库名称
         'USER': 'postgres',    # 数据库用户名
         'PASSWORD': 'admin123',     # 数据库密码
-        'HOST': 'localhost',             # 数据库服务器地址（默认本地）
+        'HOST': 'db',             # 数据库服务器地址（默认本地）
         'PORT': '5432',                  # PostgreSQL 默认端口
         # "OPTIONS": {
         #     "service": "my_service",
@@ -137,8 +137,8 @@ STATIC_URL = 'static/'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "staticfiles",
 # ]
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATIC_ROOT = BASE_DIR / "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
