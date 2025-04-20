@@ -84,14 +84,20 @@ WSGI_APPLICATION = 'keymanager.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        'NAME': 'postgres',    # 数据库名称
+        'USER': 'postgres',    # 数据库用户名
+        'PASSWORD': 'password',     # 数据库密码
+        'HOST': 'localhost',             # 数据库服务器地址（默认本地）
+        'PORT': '5432',                  # PostgreSQL 默认端口
+        # "OPTIONS": {
+        #     "service": "my_service",
+        #     "passfile": ".my_pgpass",
+        # },
     }
 }
-APPEND_SLASH = True
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

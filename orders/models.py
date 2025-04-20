@@ -18,7 +18,7 @@ class Order(models.Model):
     saleTime = models.CharField(max_length=255,verbose_name="销售时间", null=True, blank=True) # Renamed saleTime to sale_time
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="价格", null=True, blank=True)
     # contribute = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="贡献值", null=True, blank=True)
-    machineId = models.CharField(max_length=255, verbose_name="机器ID", unique=True) # Renamed machineId to machine_id, assuming it should be unique
+    machineId = models.CharField(max_length=255, verbose_name="机器ID") # Renamed machineId to machine_id, assuming it should be unique
     create_time = models.DateTimeField(auto_now_add=True) # 创建时间
 
     def __str__(self):
