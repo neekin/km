@@ -5,7 +5,7 @@ services:
       POSTGRES_PASSWORD: admin123  # 必须设置密码
 
     volumes:
-      - /home/printer/pgdata:/var/lib/postgresql/data
+      - /home/deploy/pgdata:/var/lib/postgresql/data
 
   web:
     build: .
@@ -20,6 +20,8 @@ services:
   nginx:
     image: nginx:latest
     volumes:
+      - ./auto-updates:/app/auto-updates # 映射 electron-updater 目录
+      - ./smallest-updates:/app/smallest-updates
       - ./staticfiles:/app/staticfiles
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
