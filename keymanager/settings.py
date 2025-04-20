@@ -32,6 +32,7 @@ CSRF_TRUSTED_ORIGINS = [
     # 'http://127.0.0.1:8000'
     "http://armbian.lan",
     "https://printer.chaofan.live",
+    "https://armbian.chaofan.live",
     # 其他可信域名（如HTTPS需完整协议）
 ]
 
