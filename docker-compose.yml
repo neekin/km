@@ -4,15 +4,15 @@ services:
     environment:
       POSTGRES_PASSWORD: admin123  # 必须设置密码
 
-    # volumes:
-    #   - /home/printer/pgdata:/var/lib/postgresql/data  # 关键数据持久化配置[1](@ref)[5](@ref)
+    volumes:
+      - /home/printer/pgdata:/var/lib/postgresql/data
 
   web:
     build: .
     command: gunicorn -c gunicorn.py keymanager.wsgi:application
     volumes:
-      - .:/code
-      - ./staticfiles:/code/staticfiles
+      - .:/app
+      - ./staticfiles:/app/staticfiles
     depends_on:
       - db
 
