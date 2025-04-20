@@ -89,7 +89,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         'NAME': 'postgres',    # 数据库名称
         'USER': 'postgres',    # 数据库用户名
-        'PASSWORD': 'password',     # 数据库密码
+        'PASSWORD': 'admin123',     # 数据库密码
         'HOST': 'localhost',             # 数据库服务器地址（默认本地）
         'PORT': '5432',                  # PostgreSQL 默认端口
         # "OPTIONS": {
