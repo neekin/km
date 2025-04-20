@@ -12,3 +12,7 @@ ps -ef | grep gunicorn
 #定时任务
 python manage.py crontab add
 python manage.py crontab show
+
+docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py collectstatic
+docker-compose exec web python manage.py crontab add
