@@ -7,10 +7,12 @@ Django==5.2
 django-crontab==0.7.1
 django-simpleui==2025.1.13
 djangorestframework==3.16.0
+et_xmlfile==2.0.0
 gevent==24.11.1
 greenlet==3.1.1
 gunicorn==23.0.0
 idna==3.10
+openpyxl==3.1.5
 packaging==24.2
 psycopg==3.2.6
 requests==2.32.3
