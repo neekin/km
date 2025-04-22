@@ -20,7 +20,7 @@ services:
   nginx:
     image: nginx:latest
     volumes:
-      - ./auto-updates:/app/auto-updates # 映射 electron-updater 目录
+      - ./auto-updates:/app/auto-updates
       - ./smallest-updates:/app/smallest-updates
       - ./staticfiles:/app/staticfiles
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
