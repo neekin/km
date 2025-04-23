@@ -9,7 +9,7 @@ services:
 
   web:
     build: .
-    command: gunicorn -c gunicorn.py keymanager.wsgi:application
+    command: bash -c "service cron start && python manage.py crontab add && gunicorn -c gunicorn.py keymanager.wsgi:application"
     volumes:
       - .:/app
       - ./staticfiles:/app/staticfiles
