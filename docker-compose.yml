@@ -3,9 +3,9 @@ services:
     image: postgres
     environment:
       POSTGRES_PASSWORD: admin123  # 必须设置密码
-
     volumes:
       - /home/deploy/pgdata:/var/lib/postgresql/data
+    restart: always  # 数据库服务始终重启
 
   web:
     build: .
@@ -15,7 +15,7 @@ services:
       - ./staticfiles:/app/staticfiles
     depends_on:
       - db
-
+    restart: always  # Web 服务仅在失败时重启
 
   nginx:
     image: nginx:latest
@@ -28,3 +28,4 @@ services:
       - "8080:80"
     depends_on:
       - web
+    restart: always  # Nginx 服务会重启，除非手动停止
