@@ -147,5 +147,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRONJOBS = [
-    ('*/1 * * * *', 'licence.tasks.set_offline'), # 每隔1分钟执行
+    ('*/1 * * * *', 'licence.tasks.set_offline', '>> /var/log/cron.log 2>&1'), # 每隔1分钟执行
 ]
